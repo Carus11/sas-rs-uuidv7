@@ -1,6 +1,6 @@
 # SAS-RS-UUIDv7
 
-A Rust library for generating UUIDv7 values that can be called from SAS.
+A Rust library for wrapping the uuid crate function for generating UUIDv7 values that can be called from SAS.
 
 ## Overview
 
