@@ -1,0 +1,17 @@
+FROM registry.access.redhat.com/ubi8/ubi:latest
+
+# Install development tools
+RUN dnf install -y gcc make curl openssl-devel
+
+# Install Rust for the target system
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# Copy the project files
+WORKDIR /build
+COPY . .
+
+# Build the library for the target system
+RUN cargo build --release
+
+# The library will be in /build/target/release/libsas_rs_uuidv7.so
