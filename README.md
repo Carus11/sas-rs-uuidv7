@@ -38,7 +38,7 @@ The UBI8-compatible library will be available at `./build/libsas_rs_uuidv7.so`.
 
 Configure the Compute servers restriction options in Environment Manager `sas.compute.server:restricted_options`
 ```
--protolibs("/path/to/libs", OS_PATHS, SAS_PATHS)
+-PROTOLIBS=("/path/to/libs", OS_PATHS, SAS_PATHS)
 ```
 
 ```sas

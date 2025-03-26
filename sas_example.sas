@@ -8,7 +8,6 @@ proc proto package=work.myfuncs.uuid
   /* Update this path to your library location */
   link "/path/to/libsas_rs_uuidv7.so";
   
-  /* C interface declaration - no 'extern' keyword needed */
   char* uuidv7();
 run;
 
@@ -21,7 +20,7 @@ proc fcmp outlib=work.myfuncs.new_uuid;
 run;
 
 /* Generate 10 UUIDs using the fcmp function */
-data test_wrapped;
+data test;
   do i = 1 to 10;
     length uuid $ 36;
     uuid = new_uuidv7();
@@ -30,5 +29,5 @@ data test_wrapped;
 run;
 
 /* Display the results */
-proc print data=test_wrapped;
+proc print data=test;
 run;
